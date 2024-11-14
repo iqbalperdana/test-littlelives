@@ -2,6 +2,11 @@
 
 Simple school appointment system.
 
+## Project prerequisites
+
+- Node.js
+- postgresql
+
 ## Project setup
 
 ```bash
