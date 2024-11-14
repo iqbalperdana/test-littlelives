@@ -22,6 +22,16 @@ export class SchedulesService {
     if (!date || isNaN(new Date(date).getTime())) {
       throw new InvalidInputException('Invalid date');
     }
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const checkDate = new Date(date);
+    checkDate.setHours(0, 0, 0, 0);
+
+    if (checkDate < today) {
+      throw new InvalidInputException('Date cannot be in the past');
+    }
+
     const startTime = new Date(date);
     startTime.setHours(0, 0, 0, 0);
 
